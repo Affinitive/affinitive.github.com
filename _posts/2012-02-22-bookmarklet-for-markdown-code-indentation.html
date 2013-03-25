@@ -1,0 +1,12 @@
+--- 
+title: Bookmarklet for Markdown Code Indentation
+layout: post
+published: true
+---
+<p>Ever copy and paste code into a text editor and then realize you need to indent every line by four spaces to get it all escaped properly?  Drive you crazy?  Yeah, me too.  I wrote a bookmarklet to take the currently selected text in a textarea input box and indent everything by four spaces.  So you paste your code, select it, then click on this bookmarklet.  I&rsquo;ve only tested it on Chrome, so it might need slight modifications for other browsers.  Here&rsquo;s <a href="https://gist.github.com/1886489">the source</a>.</p>
+
+<p>Ironically, markdown won&rsquo;t let me create a link that has javascript in the href field, so I can&rsquo;t post a link that you can simply drag to your bookmarks bar to install.  Instead, right-click on the bookmarks bar and select &ldquo;Add Page&hellip;&rdquo; and paste this into the url field.  Or duplicate an existing bookmark and edit the url setting to be this:</p>
+
+<div class="CodeRay">
+  <div class="code"><pre>javascript:(function(){var d=document.activeElement,c=document.getSelection().toString(),a=&quot;&quot;,b=c.split(&quot;\n&quot;);indent=&quot;    &quot;,i=0,total=b.length;if(c==&quot;&quot;){return}for(i=0;i &lt; total;i++){a+=indent+b[i]+&quot;\n&quot;}d.value=d.value.split(c).join(a)}());</pre></div>
+</div>

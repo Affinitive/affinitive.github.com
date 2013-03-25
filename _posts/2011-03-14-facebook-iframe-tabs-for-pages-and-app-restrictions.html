@@ -1,0 +1,10 @@
+--- 
+title: Facebook iframe Tabs for Pages and App Restrictions
+layout: post
+published: true
+---
+<p><em>Update 5/24/2012: Facebook has finally added the ability to manage app restrictions into the Developer App. &nbsp;See&nbsp;</em><em><a href="https://developers.facebook.com/docs/opengraph/userrestrictions/" target="_blank">https://developers.facebook.com/docs/opengraph/userrestrictions/</a></em></p>
+<p>We posted sample code demonstrating the capabilities of <a href="http://developers.facebook.com/blog/post/462/">Facebook's iframe Tabs for Pages</a>.  You can view the sample tab&nbsp;<a href="http://www.facebook.com/apps/application.php?id=190412927644356&amp;sk=app_190412927644356">here</a>&nbsp;and the code on GitHub:&nbsp;<a href="https://github.com/Affinitive/FacebookRestrictedTab">https://github.com/Affinitive/FacebookRestrictedTab</a>. The code also contains sample php scripts for setting and removing <a href="http://developers.facebook.com/docs/reference/rest/admin.setrestrictioninfo/">demographic restrictions for Facebook applications</a>.</p>
+<p>Demographic restrictions are based on the user's Facebook account settings. If a person doesn't meet the demographics <strong>or</strong>&nbsp;is not logged in to Facebook, she will not see the application or tab at all. So this has it's advantages (unauthorized people can't reach the app at all) and disadvantages (not visible to people not logged into Facebook).</p>
+<p>With the March 2011 release of iframe Tabs for Pages, it allows us to use normal GeoIP methods to detect a person's country. This can be used for display of geo-targetted data to people not logged into Facebook. If the user is logged in to Facebook, her min age, country, and locale are all passed in the signed request.</p>
+<p>The way to do GeoIP targeting as well as access all of the Facebook data that is available is demonstrated in the sample code. Also see Facebook's official documentation on <a href="http://developers.facebook.com/docs/guides/canvas/#tabs">Custom Page Tabs</a>.</p>

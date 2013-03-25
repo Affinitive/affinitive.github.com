@@ -1,0 +1,70 @@
+--- 
+title: Writing Custom Lithium li3 Validators
+layout: post
+published: true
+---
+<p>Here at Affinitive we have been starting to use the php framework named &ldquo;Lithium&rdquo; or &ldquo;Li3&rdquo;. One of the nice little features of this framework is that it comes built in with some very handy validators for validating your data before sending it to the database. But, as with all default measures that are taken to ensure your data is complete, sometimes you need to extend upon it, you do this with li3 validators by writing your own.</p>
+
+<p>The process of writing a validator is very simple, you define it in the <code>__init</code> function of the specific Model. A sample validator is shown below</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="keyword">class</span> <span class="class">ValidateExample</span> <span class="keyword">extends</span> \lithium\data\<span class="constant">Model</span> {
+    <span class="keyword">public</span> <span class="local-variable">$validates</span> = <span class="predefined">array</span>();
+    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">function</span> <span class="function">__init</span>() {
+        <span class="local-variable">$self</span> = <span class="keyword">static</span>::_object();
+        <span class="keyword">static</span>::config();
+        <span class="comment">// your __init code here </span>
+        <span class="constant">Validator</span>::add(<span class="string"><span class="delimiter">'</span><span class="content">sampleValidator</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(&amp;<span class="local-variable">$value</span>, <span class="local-variable">$format</span> = <span class="predefined-constant">null</span>, <span class="predefined">array</span> <span class="local-variable">$options</span> = <span class="predefined">array</span>()) {
+            <span class="comment">// your code here</span>
+            <span class="keyword">return</span> <span class="local-variable">$is_valid</span>;
+        });
+    }
+}</pre></div>
+</div>
+
+
+<p>Lets look at the three values that are given to the <code>Validator::add</code> function so that it can work and validate effectively [see <a href="http://lithify.me/docs/lithium/util/Validator::add()">http://lithify.me/docs/lithium/util/Validator::add()</a> for complete official api documentation].</p>
+
+<ul>
+<li><code>&amp;$value</code> &ndash; a reference to the given value</li>
+<li><code>$format</code> &ndash; a string that describes the format of the input. (see `$options[&lsquo;format&rsquo;])</li>
+<li><code>$options</code> &ndash; a range of options that are based on the data that may or not be saved
+
+<ul>
+<li><code>$options['values']</code> &ndash; an array of values that will be saved if all the validators return true</li>
+<li><code>$options['messages']</code> &ndash; the message that will be used if your validator failed</li>
+<li><code>$options['format']</code> &ndash; This is the source for your raw format,  the $format variable is set to 0. At the time of publication, there are two bug reports dealing with this, see bug reports here: <a href="http://dev.lithify.me/lithium/tickets/view/370">here</a> and <a href="http://dev.lithify.me/lithium/tickets/view/371">here</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p>The <code>$options</code> array allows you to check other values very easily. For instance, lets say you have a normal web signup form where you ask the user to put in their email address twice to make sure that they typed it in correctly. You can use the following validator (with a custom option) to specify that you want to compare the two form values.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="constant">Validator</span>::add(<span class="string"><span class="delimiter">'</span><span class="content">match</span><span class="delimiter">'</span></span>, <span class="keyword">function</span>(&amp;<span class="local-variable">$value</span>, <span class="local-variable">$format</span> = <span class="predefined-constant">null</span>, <span class="predefined">array</span> <span class="local-variable">$options</span> = <span class="predefined">array</span>()){
+    <span class="keyword">if</span> (<span class="predefined">isset</span>(<span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span>]) &amp;&amp; <span class="predefined">in_array</span>(<span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span>], <span class="predefined">array_keys</span>(<span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">values</span><span class="delimiter">'</span></span>]))) {
+        <span class="keyword">return</span> <span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">values</span><span class="delimiter">'</span></span>][<span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span>]] == <span class="local-variable">$value</span>;
+    } <span class="keyword">else</span> <span class="keyword">if</span> (!<span class="predefined">isset</span>(<span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span>])) {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="constant">InvalidArgumentException</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">You did not specify a value to match against using the keyword 'against' </span><span class="delimiter">&quot;</span></span>);
+    } <span class="keyword">else</span> {
+        <span class="keyword">throw</span> <span class="keyword">new</span> <span class="constant">InvalidArgumentException</span>(<span class="string"><span class="delimiter">&quot;</span><span class="content">The name </span><span class="inline"><span class="delimiter">{</span><span class="local-variable">$options</span>[<span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span>]<span class="delimiter">}</span></span><span class="content"> is not valid</span><span class="delimiter">&quot;</span></span>);
+    }
+});</pre></div>
+</div>
+
+
+<p>You can use this to make sure that two entries on your form are the same by entering the following line into your list of validations for a field.</p>
+
+<div class="CodeRay">
+  <div class="code"><pre><span class="predefined">array</span>(
+    <span class="string"><span class="delimiter">'</span><span class="content">match</span><span class="delimiter">'</span></span>,
+    <span class="string"><span class="delimiter">'</span><span class="content">message</span><span class="delimiter">'</span></span> =&gt; <span class="string"><span class="delimiter">&quot;</span><span class="content">field1 must match this field</span><span class="delimiter">&quot;</span></span>, 
+    <span class="string"><span class="delimiter">'</span><span class="content">against</span><span class="delimiter">'</span></span> =&gt; <span class="string"><span class="delimiter">&quot;</span><span class="content">field1</span><span class="delimiter">&quot;</span></span>
+);</pre></div>
+</div>
+
+
+<p>With this array, we call the &ldquo;match&rdquo; validator and give it two options, a message string and an against string. These both get passed to the validator, where it uses the against string to find the value of the intended variable and compare it to the given value.</p>
+
+<p>We must also check to make sure that we are not being given faulty data (ex. wrong column names, etc.), so we sprinkle a few if statements and exception throwing to make sure the developer knows there is something wrong.</p>
