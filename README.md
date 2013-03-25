@@ -15,3 +15,4 @@ Installed the Hooligan theme with `rake theme:install git="https://github.com/dh
 - Found a tip on handling multiple authors here: [https://gist.github.com/ravasthi/1834570](https://gist.github.com/ravasthi/1834570)
 - Figure out if we can preserve the permalinks we had there
 - Update dev.beaffinitive.com to point here
+- Setup affinitivedev feedburner.
