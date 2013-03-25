@@ -11,12 +11,21 @@ pygments: true
 #
 title : Affinitive Dev
 tagline: "Social Technology, Tips, News, Best Practices"
+
 author :
   name : Affinitive Dev Team
-  email : affinitivedev@beaffinitive.com
+  email : affinitivedev at beaffinitive
   github : Affinitive
   twitter : Affinitive
   feedburner : affinitivedev
+
+authors :
+  rmarscher :
+    name : Rob Marscher
+    email : rmarscher at beaffinitive
+    github : rmarscher
+    twitter : rmarscher
+
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
