@@ -2,6 +2,7 @@
 title: Facebook Secure Tab URL
 layout: post
 published: true
+author: rmarscher
 ---
 {% include JB/setup %}
 Facebook introduced a new app setting called Secure Tab URL. If it is empty (which it is by default), then your iframe tab will no longer display on pages that have added it when the user viewing the page has enabled the Secure Browsing setting.<p><img src="{{ ASSET_PATH}}/images/secure-browsing.png" alt="secure browsing image" /></p><p>What does this mean for developers? It means you need to setup https for your web server as soon as possible. You'll need to purchase an SSL/TLS certificate for your domain and install it on your webserver (GoDaddy has a pretty good deal for certificates). After https is setup, you also need to make sure your code loads all images, css, and scripts on the page with https if the page was loaded with https (otherwise, browsers - especially IE - will complain that the page contains non-secure items). In PHP with Apache or Litespeed web servers, you can check isset($_SERVER['HTTPS']) to know if the page was loaded with https. <p /> After you get this all rocking, you need to update the Secure Canvas URL and Secure Tab URL settings in your application settings on Facebook.</p><p><img src="{{ ASSET_PATH}}/images/secure-tab-url.png" alt="secure tab url image" /></p>

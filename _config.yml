@@ -30,6 +30,12 @@ authors :
     email : sloan at beaffinitive
     github : smergler
     twitter : smergler
+  btroia :
+    name : Bob Troia
+    email : bob at beaffinitive
+    github : btroia
+    twitter : BobTroia
+
 
 # The production_url is only used when full-domain names are needed
 # such as sitemap.txt
