@@ -39,10 +39,13 @@
         <div class="container">
           <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
           <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar">&nbsp;</span>
+            <span class="icon-bar">&nbsp;</span>
+            <span class="icon-bar">&nbsp;</span>
           </a>
 
 
-          <a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a>
+					<h1><a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
 
 
           <div class="nav-collapse">
@@ -103,8 +106,25 @@
 
     <div class="container">
       <div class="content">
-        {% assign myTheme = page.theme %}
-        {{ content }}
+        <div class="row-fluid">
+          <div class="span9">
+            {% assign myTheme = page.theme %}
+            {{ content }}
+          </div>
+          <div class="about span3">
+            <div class="row-fluid">
+              <div class="span3" >
+                <a href="/">
+                  <img class="left" src="{{ASSET_PATH}}/images/exclamation.png" height="70" alt="" width="70">
+                </a>
+              </div>
+              <div class="about-details span9">
+                <h4 style="margin-bottom: 2px;"><a href="http://posterous.com/spaces/affinitivedev">affinitivedev</a></h4>
+                <p>Ramblings from the dev team at <a href="http://beaffinitive.com">Affinitive</a>, a word of mouth and social media marketing and technology solutions pioneer and Facebook Preferred Developer Consultant (PDC). Also see <a href="http://twitter.com/#!/affinitive">@Affinitive</a>, <a href="http://twitter.com/#!/rmarscher">@RMarscher</a>, and <a href="http://twitter.com/#!/bobtroia">@BobTroia</a>.</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <footer>

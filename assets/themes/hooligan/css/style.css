@@ -104,6 +104,9 @@ hr {
 .navbar div.navbar-inner a.brand {
   padding: 10px 20px;
 }
+.navbar div.navbar-inner h1 {
+  display:inline;
+}
 /* line 90, ../_sass/_base.scss */
 .navbar div.navbar-inner ul.nav:first-child li a {
   padding: 12px 10px 8px;
@@ -165,7 +168,7 @@ hr {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   padding: 20px 20px 10px;
-  margin: 0px -20px 20px;
+  margin: 0 0 20px;
   z-index: 0;
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
