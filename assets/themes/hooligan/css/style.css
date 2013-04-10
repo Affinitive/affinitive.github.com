@@ -34,7 +34,6 @@ a {
   color: #4cb4e8;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
-  -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
@@ -104,54 +103,55 @@ hr {
 .navbar div.navbar-inner a.brand {
   padding: 10px 20px;
 }
+/* line 88, ../_sass/_base.scss */
 .navbar div.navbar-inner h1 {
-  display:inline;
+  display: inline;
 }
-/* line 90, ../_sass/_base.scss */
+/* line 93, ../_sass/_base.scss */
 .navbar div.navbar-inner ul.nav:first-child li a {
   padding: 12px 10px 8px;
 }
 
-/* line 99, ../_sass/_base.scss */
+/* line 102, ../_sass/_base.scss */
 .container > footer {
   margin-top: 20px;
   clear: both;
 }
 
-/* line 103, ../_sass/_base.scss */
+/* line 106, ../_sass/_base.scss */
 .container > footer p {
   text-align: center;
   /* center align it with the container */
 }
 
 /* Content */
-/* line 110, ../_sass/_base.scss */
+/* line 113, ../_sass/_base.scss */
 .content {
   /* when there's no page-header */
   /* Wide column content */
 }
-/* line 111, ../_sass/_base.scss */
+/* line 114, ../_sass/_base.scss */
 .content img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
-/* line 115, ../_sass/_base.scss */
+/* line 118, ../_sass/_base.scss */
 .content.no-header {
   padding-top: 40px;
 }
-/* line 122, ../_sass/_base.scss */
+/* line 125, ../_sass/_base.scss */
 .content div.row div.span8 > img {
   display: block;
   margin: 10px auto;
 }
-/* line 128, ../_sass/_base.scss */
+/* line 131, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;
 }
-/* line 130, ../_sass/_base.scss */
+/* line 133, ../_sass/_base.scss */
 .content div.row div.span4 h4:first {
   margin-top: 0;
 }
-/* line 134, ../_sass/_base.scss */
+/* line 137, ../_sass/_base.scss */
 .content p {
   padding-bottom: 15px;
   line-height: 25px;
@@ -159,7 +159,7 @@ hr {
 }
 
 /* Page header tweaks */
-/* line 142, ../_sass/_base.scss */
+/* line 145, ../_sass/_base.scss */
 .page-header {
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
@@ -168,32 +168,28 @@ hr {
   background-color: rgba(0, 0, 0, 0.3);
   border: none;
   padding: 20px 20px 10px;
-  margin: 0 0 20px;
+  margin: 0px -20px 20px;
   z-index: 0;
   -moz-border-radius-bottomleft: 5px;
   -webkit-border-bottom-left-radius: 5px;
-  -ms-border-bottom-left-radius: 5px;
-  -o-border-bottom-left-radius: 5px;
   border-bottom-left-radius: 5px;
   -moz-border-radius-bottomright: 5px;
   -webkit-border-bottom-right-radius: 5px;
-  -ms-border-bottom-right-radius: 5px;
-  -o-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 155, ../_sass/_base.scss */
+/* line 158, ../_sass/_base.scss */
 .page-header h1 {
   color: #eee;
   margin-bottom: 0;
 }
 
-/* line 161, ../_sass/_base.scss */
+/* line 164, ../_sass/_base.scss */
 .topbar .btn {
   border: 0;
 }
 
 /* Pagination */
-/* line 168, ../_sass/_base.scss */
+/* line 171, ../_sass/_base.scss */
 div.pagination li a {
   -webkit-box-shadow: 0px 1px 1px black;
   -moz-box-shadow: 0px 1px 1px black;
@@ -201,7 +197,7 @@ div.pagination li a {
 }
 
 /* Buttons */
-/* line 176, ../_sass/_base.scss */
+/* line 179, ../_sass/_base.scss */
 a.btn, a.btn.disabled {
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 1px 1px 2px #000;
@@ -211,44 +207,46 @@ a.btn, a.btn.disabled {
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0, rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
   -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 }
-/* line 187, ../_sass/_base.scss */
+/* line 190, ../_sass/_base.scss */
 a.btn:hover, a.btn.disabled:hover {
   background: rgba(255, 255, 255, 0.05);
 }
-/* line 190, ../_sass/_base.scss */
+/* line 193, ../_sass/_base.scss */
 a.btn.disabled, a.btn.disabled.disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
 /* Tags */
-/* line 196, ../_sass/_base.scss */
+/* line 199, ../_sass/_base.scss */
 .tag_box {
   list-style: none;
   margin: 0;
   padding: 5px 0;
   overflow: hidden;
 }
-/* line 202, ../_sass/_base.scss */
-.tag_box.inline li {
-  float: left;
+/* line 204, ../_sass/_base.scss */
+.tag_box.inline {
+  display: inline;
 }
-/* line 206, ../_sass/_base.scss */
+/* line 207, ../_sass/_base.scss */
 .tag_box li {
+  display: inline;
   line-height: 28px;
 }
-/* line 210, ../_sass/_base.scss */
+/* line 212, ../_sass/_base.scss */
 .tag_box a.active {
   background: #57A957;
   border: 1px solid #4C964D;
   color: #FFF;
 }
-/* line 215, ../_sass/_base.scss */
+/* line 217, ../_sass/_base.scss */
 .tag_box a span {
   vertical-align: super;
   font-size: 0.8em;
+  display: none;
 }
 
-/* line 223, ../_sass/_base.scss */
+/* line 226, ../_sass/_base.scss */
 .tag_box.inline a,
 .tag_box a {
   padding: 3px 6px;
@@ -261,80 +259,62 @@ a.btn.disabled, a.btn.disabled.disabled {
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0, rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
   -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 }
-/* line 235, ../_sass/_base.scss */
+/* line 238, ../_sass/_base.scss */
 .tag_box.inline a:hover,
 .tag_box a:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
 /* Page-specific */
-/* line 242, ../_sass/_base.scss */
+/* line 245, ../_sass/_base.scss */
 div.content div#page-index {
   padding-top: 30px !important;
 }
 
 /* Zocial Overrides */
-/* line 248, ../_sass/_base.scss */
+/* line 251, ../_sass/_base.scss */
 .navbar a.zocial {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 254, ../_sass/_base.scss */
+/* line 257, ../_sass/_base.scss */
 .zocial.googleplus:focus,
 .zocial.googleplus:hover {
   color: #e01d30 !important;
 }
 
-/* line 259, ../_sass/_base.scss */
+/* line 262, ../_sass/_base.scss */
 .zocial.twitter:focus,
 .zocial.twitter:hover {
   color: #46c0fb !important;
 }
 
-/* line 265, ../_sass/_base.scss */
+/* line 268, ../_sass/_base.scss */
 .zocial.linkedin:focus,
 .zocial.linkedin:hover {
   color: #50a1cb !important;
 }
 
-/* Layout */
-/* line 2, ../_sass/_responsive.scss */
-.navbar {
-  margin-bottom: 0;
-}
-/* line 4, ../_sass/_responsive.scss */
-.navbar div.navbar-inner {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-/* line 7, ../_sass/_responsive.scss */
-.navbar ul.social {
-  /* Hide social menu on low-res screens */
-}
-@media (min-width: 240px) and (max-width: 979px) {
-  /* line 7, ../_sass/_responsive.scss */
-  .navbar ul.social {
-    display: none !important;
-  }
+/* line 273, ../_sass/_base.scss */
+.zocial.rss:focus,
+.zocial.rss:hover {
+  color: #fb9d3a !important;
 }
 
 /* Responsive Overrides */
 @media (max-width: 767px) {
-  /* line 18, ../_sass/_responsive.scss */
+  /* line 3, ../_sass/_responsive.scss */
   body {
     padding-right: 0px;
     padding-left: 0px;
   }
 
-  /* line 23, ../_sass/_responsive.scss */
+  /* line 8, ../_sass/_responsive.scss */
   div.container {
     padding: 0px 20px;
   }
-  /* line 25, ../_sass/_responsive.scss */
+  /* line 10, ../_sass/_responsive.scss */
   div.container div.page-header {
     -webkit-border-radius: 0;
     -moz-border-radius: 0;
@@ -381,8 +361,8 @@ div.posts article div.date time {
   padding: 5px 10px;
 }
 
-/* This is for your site's custom styling */
-/* line 3, ../_sass/_custom.scss */
+/* This is for your Custom Content. */
+/* line 2, ../_sass/_custom.scss */
 div.sidebar section {
   background: #202020;
   background-color: rgba(0, 0, 0, 0.3);
@@ -396,7 +376,8 @@ div.sidebar section {
   border-radius: 5px;
   padding: 15px;
 }
-/* line 12, ../_sass/_custom.scss */
+
+/* line 15, ../_sass/_custom.scss */
 div.sidebar section img.icon {
   float: left;
   margin: 7px 15px 0 0;

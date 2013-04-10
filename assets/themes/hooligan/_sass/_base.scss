@@ -202,11 +202,10 @@ a.btn, a.btn.disabled {
 	padding:5px 0 ;
 	overflow:hidden;
 	&.inline {
-		li {
-			float:left;
-		}
+		display:inline; ;
 	}
 	li {
+		display:inline;
 		line-height:28px;
 	}
 	a {
@@ -218,6 +217,7 @@ a.btn, a.btn.disabled {
 		span{
 			vertical-align:super;
 			font-size:0.8em;
+			display:none;
 		}
 	}
 }
