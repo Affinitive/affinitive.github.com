@@ -285,3 +285,7 @@ div.content {
 .zocial.rss:hover {
 	color:#fb9d3a !important;
 }
+
+.fb-comments > span,
+.fb-comments iframe
+{width: 100% !important;}

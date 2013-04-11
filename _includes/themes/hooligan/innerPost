@@ -31,4 +31,5 @@
 		{% endif %}
 	</div>
 	{{ post.content }}
+	<div class="span12 fb-comments" data-href="{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark"></div>
 </div>

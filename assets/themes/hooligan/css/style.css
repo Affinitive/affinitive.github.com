@@ -313,6 +313,12 @@ div.content div#page-index {
   color: #fb9d3a !important;
 }
 
+/* line 291, ../_sass/_base.scss */
+.fb-comments > span,
+.fb-comments iframe {
+  width: 100% !important;
+}
+
 /* Responsive Overrides */
 @media (max-width: 767px) {
   /* line 3, ../_sass/_responsive.scss */
