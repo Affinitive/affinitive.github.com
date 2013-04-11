@@ -85,6 +85,11 @@ hr {
   	a.brand {
   		padding:10px 20px;
   	}
+  	h2.brand {
+			float:none;
+			font-size:15px;
+  		padding:10px 20px;
+  	}
 		h1 {
 			display:inline;
 		}
@@ -106,6 +111,13 @@ hr {
 .container > footer p {
   text-align: center; /* center align it with the container */
 }
+
+.container {
+	.btn-navbar, .nav-collapse {
+		display:none;
+	}
+}
+
 
 
 

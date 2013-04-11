@@ -104,54 +104,65 @@ hr {
   padding: 10px 20px;
 }
 /* line 88, ../_sass/_base.scss */
+.navbar div.navbar-inner h2.brand {
+  float: none;
+  font-size: 15px;
+  padding: 10px 20px;
+}
+/* line 93, ../_sass/_base.scss */
 .navbar div.navbar-inner h1 {
   display: inline;
 }
-/* line 93, ../_sass/_base.scss */
+/* line 98, ../_sass/_base.scss */
 .navbar div.navbar-inner ul.nav:first-child li a {
   padding: 12px 10px 8px;
 }
 
-/* line 102, ../_sass/_base.scss */
+/* line 107, ../_sass/_base.scss */
 .container > footer {
   margin-top: 20px;
   clear: both;
 }
 
-/* line 106, ../_sass/_base.scss */
+/* line 111, ../_sass/_base.scss */
 .container > footer p {
   text-align: center;
   /* center align it with the container */
 }
 
+/* line 116, ../_sass/_base.scss */
+.container .btn-navbar, .container .nav-collapse {
+  display: none;
+}
+
 /* Content */
-/* line 113, ../_sass/_base.scss */
+/* line 125, ../_sass/_base.scss */
 .content {
   /* when there's no page-header */
   /* Wide column content */
 }
-/* line 114, ../_sass/_base.scss */
+/* line 126, ../_sass/_base.scss */
 .content img {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
-/* line 118, ../_sass/_base.scss */
+/* line 130, ../_sass/_base.scss */
 .content.no-header {
   padding-top: 40px;
 }
-/* line 125, ../_sass/_base.scss */
+/* line 137, ../_sass/_base.scss */
 .content div.row div.span8 > img {
   display: block;
   margin: 10px auto;
 }
-/* line 131, ../_sass/_base.scss */
+/* line 143, ../_sass/_base.scss */
 .content div.row div.span4 h4 {
   margin-top: 10px;
 }
-/* line 133, ../_sass/_base.scss */
+/* line 145, ../_sass/_base.scss */
 .content div.row div.span4 h4:first {
   margin-top: 0;
 }
-/* line 137, ../_sass/_base.scss */
+/* line 149, ../_sass/_base.scss */
 .content p {
   padding-bottom: 15px;
   line-height: 25px;
@@ -159,7 +170,7 @@ hr {
 }
 
 /* Page header tweaks */
-/* line 145, ../_sass/_base.scss */
+/* line 157, ../_sass/_base.scss */
 .page-header {
   -webkit-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
@@ -177,19 +188,19 @@ hr {
   -webkit-border-bottom-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/* line 158, ../_sass/_base.scss */
+/* line 170, ../_sass/_base.scss */
 .page-header h1 {
   color: #eee;
   margin-bottom: 0;
 }
 
-/* line 164, ../_sass/_base.scss */
+/* line 176, ../_sass/_base.scss */
 .topbar .btn {
   border: 0;
 }
 
 /* Pagination */
-/* line 171, ../_sass/_base.scss */
+/* line 183, ../_sass/_base.scss */
 div.pagination li a {
   -webkit-box-shadow: 0px 1px 1px black;
   -moz-box-shadow: 0px 1px 1px black;
@@ -197,7 +208,7 @@ div.pagination li a {
 }
 
 /* Buttons */
-/* line 179, ../_sass/_base.scss */
+/* line 191, ../_sass/_base.scss */
 a.btn, a.btn.disabled {
   color: rgba(255, 255, 255, 0.7);
   text-shadow: 1px 1px 2px #000;
@@ -207,46 +218,46 @@ a.btn, a.btn.disabled {
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0, rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
   -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 }
-/* line 190, ../_sass/_base.scss */
+/* line 202, ../_sass/_base.scss */
 a.btn:hover, a.btn.disabled:hover {
   background: rgba(255, 255, 255, 0.05);
 }
-/* line 193, ../_sass/_base.scss */
+/* line 205, ../_sass/_base.scss */
 a.btn.disabled, a.btn.disabled.disabled {
   color: rgba(255, 255, 255, 0.3);
 }
 
 /* Tags */
-/* line 199, ../_sass/_base.scss */
+/* line 211, ../_sass/_base.scss */
 .tag_box {
   list-style: none;
   margin: 0;
   padding: 5px 0;
   overflow: hidden;
 }
-/* line 204, ../_sass/_base.scss */
+/* line 216, ../_sass/_base.scss */
 .tag_box.inline {
   display: inline;
 }
-/* line 207, ../_sass/_base.scss */
+/* line 219, ../_sass/_base.scss */
 .tag_box li {
   display: inline;
   line-height: 28px;
 }
-/* line 212, ../_sass/_base.scss */
+/* line 224, ../_sass/_base.scss */
 .tag_box a.active {
   background: #57A957;
   border: 1px solid #4C964D;
   color: #FFF;
 }
-/* line 217, ../_sass/_base.scss */
+/* line 229, ../_sass/_base.scss */
 .tag_box a span {
   vertical-align: super;
   font-size: 0.8em;
   display: none;
 }
 
-/* line 226, ../_sass/_base.scss */
+/* line 238, ../_sass/_base.scss */
 .tag_box.inline a,
 .tag_box a {
   padding: 3px 6px;
@@ -259,44 +270,44 @@ a.btn.disabled, a.btn.disabled.disabled {
   -webkit-box-shadow: rgba(0, 0, 0, 0.8) 0 1px 0, rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
   -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 }
-/* line 238, ../_sass/_base.scss */
+/* line 250, ../_sass/_base.scss */
 .tag_box.inline a:hover,
 .tag_box a:hover {
   background: rgba(255, 255, 255, 0.3);
 }
 
 /* Page-specific */
-/* line 245, ../_sass/_base.scss */
+/* line 257, ../_sass/_base.scss */
 div.content div#page-index {
   padding-top: 30px !important;
 }
 
 /* Zocial Overrides */
-/* line 251, ../_sass/_base.scss */
+/* line 263, ../_sass/_base.scss */
 .navbar a.zocial {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
 
-/* line 257, ../_sass/_base.scss */
+/* line 269, ../_sass/_base.scss */
 .zocial.googleplus:focus,
 .zocial.googleplus:hover {
   color: #e01d30 !important;
 }
 
-/* line 262, ../_sass/_base.scss */
+/* line 274, ../_sass/_base.scss */
 .zocial.twitter:focus,
 .zocial.twitter:hover {
   color: #46c0fb !important;
 }
 
-/* line 268, ../_sass/_base.scss */
+/* line 280, ../_sass/_base.scss */
 .zocial.linkedin:focus,
 .zocial.linkedin:hover {
   color: #50a1cb !important;
 }
 
-/* line 273, ../_sass/_base.scss */
+/* line 285, ../_sass/_base.scss */
 .zocial.rss:focus,
 .zocial.rss:hover {
   color: #fb9d3a !important;
