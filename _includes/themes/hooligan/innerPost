@@ -18,8 +18,7 @@
 					</span>
 				</h4>
 		{% endif %}
-		{% if post.tags == empty %}
-		{% else %}
+		{% unless post.tags == empty %}
 			<section>
 				<h4 class="tag_box inline">Tags
 					<ul class="tag_box inline">
@@ -28,7 +27,7 @@
 					</ul>
 				</h4>
 			</section>
-		{% endif %}
+		{% endunless %}
 	</div>
 	{{ post.content }}
 	<div class="span12 fb-comments" data-href="{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark"></div>
