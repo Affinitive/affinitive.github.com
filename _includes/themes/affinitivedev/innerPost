@@ -22,5 +22,5 @@
 <div class="e-content">
 	{{ post.content }}
 </div>
-<div class="fb-comments" data-href="{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark">
+<div class="fb-comments" data-href="{{ site.production_url }}{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark">
 </div>
