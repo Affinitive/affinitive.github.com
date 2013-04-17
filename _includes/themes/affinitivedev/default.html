@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>
+      {% if page.title %}
+        {{ page.title }} -
+      {% endif %}
+      {{ site.title }}
+    </title>
+    {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
+    <meta name="author" content="{{ site.author.name }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- included via sass/compass
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet">
+    <link href="{{ ASSET_PATH }}/css/darkstrap.css" rel="stylesheet" type="text/css" media="all">
+    <link rel="stylesheet" type="text/css" href="{{ ASSET_PATH }}/css-social-buttons/css/zocial.stripped.css">
+    <link href="{{ ASSET_PATH }}/css/pygments.css" rel="stylesheet" type="text/css" media="all">
+    -->
+    <link href="{{ ASSET_PATH }}/css/style.css" rel="stylesheet" type="text/css" media="all">
+
+    <!-- fav and touch icons -->
+    <!-- Update these with your own images
+      <link rel="shortcut icon" href="images/favicon.ico">
+      <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+      <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+      <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+    -->
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="navbar-inner">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar">&nbsp;</span>
+          <span class="icon-bar">&nbsp;</span>
+          <span class="icon-bar">&nbsp;</span>
+        </a>
+        <h1><a class="brand" href="{{ HOME_PATH }}">{{ site.title }}</a></h1>
+        <div class="nav-collapse">
+          <ul class="nav">
+            {% assign pages_list = site.pages %}
+            {% assign group = 'navigation' %}
+            {% include JB/pages_list %}
+          </ul>
+          <ul class="nav pull-right social visible-desktop">
+            <li class="divider-vertical"></li>
+            {% if site.author.github %}
+              <li>
+                <a href="https://github.com/{{ site.author.github }}" class="zocial github icon" target="_blank">
+                  <span class="hidden-desktop">Github</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if site.author.googleplus %}
+              <li>
+                <a href="https://plus.google.com/{{ site.author.googleplus }}" class="zocial googleplus icon" target="_blank">
+                  <span class="hidden-desktop">Google+</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if site.author.twitter %}
+              <li>
+                <a href="https://twitter.com/{{ site.author.twitter }}" class="zocial twitter icon" target="_blank">
+                <span class="hidden-desktop">Twitter</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if site.author.facebook %}
+              <li>
+                <a href="http://www.facebook.com/{{ site.author.facebook }}" class="zocial facebook icon" target="_blank">
+                  <span class="hidden-desktop">Facebook</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if site.author.linkedin %}
+              <li>
+                <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}" class="zocial linkedin icon" target="_blank">
+                  <span class="hidden-desktop">LinkedIn</span>
+                </a>
+              </li>
+            {% endif %}
+            {% if site.author.feedburner %}
+              <li>
+                <a href="http://feeds.feedburner.com/{{ site.author.feedburner }}" class="zocial rss icon" target="_blank">
+                  <span class="hidden-desktop">FeedBurner</span>
+                </a>
+              </li>
+            {% endif %}
+          </ul>
+        </div>
+        <h2 class="brand" >Social Technology, Tips, News, Best Practices</h2>
+      </div>
+    </div>
+
+    <div class="container-fluid content">
+      <div class="row-fluid">
+          <div class="span9">
+            {% assign myTheme = page.theme %}
+            {{ content }}
+          </div>
+          <div class="about span3">
+            <div class="span3" >
+              <a href="/">
+                <img class="left" src="{{ASSET_PATH}}/images/exclamation.png" alt="">
+              </a>
+            </div>
+            <div class="about-details span9">
+              <h4 style="margin-bottom: 2px;">Affinitive Dev Blog</h4>
+              <p>
+                Ramblings from the dev team at <a href="http://beaffinitive.com">Affinitive</a>,
+                a word of mouth and social media marketing and
+                technology solutions pioneer and Facebook Preferred Marketing Developer (PMD).
+                Also see <a href="http://twitter.com/#!/affinitive">@Affinitive</a>,
+                <a href="http://twitter.com/#!/rmarscher">@RMarscher</a>,
+                and <a href="http://twitter.com/#!/bobtroia">@BobTroia</a>.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>
+          &copy; {{ site.time | date: '%Y' }} Affinitive.
+          Built with
+          <a href="http://jekyllrb.com" target="credits">jekyll</a>,
+          <a href="http://twitter.github.io/bootstrap" target="credits">bootstrap</a>
+          (and <a href="http://jekyllbootstrap.com" target="credits">jekyll bootstrap</a>),
+          and <a href="http://github.com" target="credits">github</a>.
+        </p>
+      </footer>
+    </div> <!-- /container -->
+    <div id="fb-root"></div>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.js"><\/script>')</script>
+    <script src="{{ ASSET_PATH }}/js/bootstrap.min.js"></script>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=164701867022589";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    {% include JB/analytics %}
+  </body>
+</html>

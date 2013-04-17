@@ -1,5 +1,8 @@
+require 'bootstrap-sass'
+
 http_path = "/"
-css_dir = "assets/themes/hooligan/css"
-sass_dir = "assets/themes/hooligan/_sass"
-images_dir = "images"
-javascripts_dir = "javascripts"
+css_dir = "assets/themes/affinitivedev/css"
+sass_dir = "assets/themes/affinitivedev/_sass"
+images_dir = "assets/themes/affinitivedev/images"
+javascripts_dir = "assets/themes/affinitivedev/js"
+

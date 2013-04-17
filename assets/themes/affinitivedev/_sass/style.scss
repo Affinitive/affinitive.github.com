@@ -1,27 +1,39 @@
-@import url(http://fonts.googleapis.com/css?family=Advent+Pro);
-// @import url(http://fonts.googleapis.com/css?family=Oxygen);
+// @todo is it better to include this from a link tag than @import?
+// @import url(http://fonts.googleapis.com/css?family=Advent+Pro);
+@import url(//fonts.googleapis.com/css?family=Oxygen);
 
-/* Compass Vars */
+// compass vars
 $default-box-shadow-color: #000;
 $default-box-shadow-v-offset: 1px;
 $default-box-shadow-blur: 1px;
 
-/* Bootstrap Vars */
+// bootstrap vars
 $bodyBackground: #2a2a2a;
 $textColor: #bbb;
 $linkColor: #4cb4e8;
 $sansFontFamily: "Oxygen", sans-serif;
 
-$headingsFontFamily: "Advent Pro", sans-serif;
+$headingsFontFamily: "HelveticaNeue-Light","Helvetica Neue Light",Arial,Helvetica,sans-serif;
 $headingsFontWeight: normal;
 $headingsColor: #999;
 
+// libraries
+@import "bootstrap";
+@import "bootstrap-responsive";
+@import "compass";
+@import "darkstrap";
+@import "zocial";
+@import "pygments";
 
+// main styles
 
+// @todo there are probably a several places below that can be replaced
+// @todo with bootstrap or compass mixins
+
+// @todo we're about at the point we should think about splitting this up
+// @todo separating the post styles from the layout and nav seems logical
 
 body {
-	padding-top: 60px;
-	padding-bottom: 40px;
 	text-shadow: 1px 1px 1px #000;
 }
 
@@ -34,12 +46,11 @@ body {
 	}
 }
 
-
 a {
-	color:$linkColor;
+	color: $linkColor;
 	&:hover {
 		color: lighten($linkColor, 30);
-		text-decoration:none;
+		text-decoration: none;
 	}
 	@include transition(all 0.3s);
 }
@@ -63,39 +74,58 @@ h2 {
 }
 */
 pre, code {
-	color:#ccc;
+	color: #ccc;
 }
 
 pre > code {
 	/* Reset box-shadow for pygments */
-	background:none;
-	box-shadow:none;
-	-moz-box-shadow: none;
-		-webkit-box-shadow: none;
-		-o-box-shadow: none;
+	background: none;
+	-webkit-box-shadow: none;
+	   -moz-box-shadow: none;
+	     -o-box-shadow: none;
+	        box-shadow: none;
 }
 
 hr {
-	border:none;
+	border: none;
 	background:rgba(0,0,0,0.7);
 	height:1px;
 }
 
 /* Layout */
 .navbar {
-	margin-bottom: 0;
-	div.navbar-inner {
+	margin-left: -20px;
+	margin-right: -20px;
+	text-shadow: none;
+
+	@media (min-width: 767px) {
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	.brand {
+		color: $headingsColor;
+		margin: 0;
+		padding: 10px 0;
+		font-size: 40px;
+		text-shadow: 0;
+	}
+
+	.navbar-inner {
 		@include border-radius(0);
-		a.brand {
-			padding:10px 20px;
-		}
-		h2.brand {
-			float:none;
-			font-size:15px;
-			padding:10px 20px;
-		}
 		h1 {
-			display:inline;
+			display: inline;
+			margin: 0;
+			.brand {
+			}
+		}
+		h2 {
+			float: none;
+			clear: left;
+			font-size: 20px;
+			@media (max-width: 480px) {
+				display: none;
+			}
 		}
 		ul.nav:first-child {
 			li {
@@ -108,10 +138,8 @@ hr {
 }
 
 .btn-navbar, .nav-collapse {
-	display:none;
+	display: none !important;
 }
-
-
 
 /* Content */
 .content {
@@ -124,7 +152,7 @@ hr {
 	}
 
 	/* Wide column content */
-	.row {
+	.row-fluid {
 		.span8 {
 			> img {
 				display:block;
@@ -153,24 +181,33 @@ hr {
 	);
 	background: #202020;
 	background-color: rgba(0, 0, 0, 0.3);
-	border:none;
+	border: none;
 	padding: 20px 20px 10px;
 	margin: 0px -20px 20px;
 	z-index: 0;
-	@include border-bottom-left-radius;
-	@include border-bottom-right-radius;
+	@include border-bottom-left-radius(3px);
+	@include border-bottom-right-radius(3px);
 	h1 {
-		color:#eee;
-		margin-bottom:0;
+		color: #eee;
+		margin: 0;
+	}
+	h4 {
+		font-size: 14px;
+		font-height: 16px;
 	}
 }
 
 .topbar .btn {
-	border: 0;
+  border: 0;
+}
+
+/* Posts */
+.post {
+	margin-bottom: 1em;
 }
 
 /* Pagination */
-div.pagination {
+.pagination {
 	li {
 		a {
 			@include box-shadow;
@@ -184,12 +221,12 @@ a.btn, a.btn.disabled {
 	color:rgba(255, 255, 255, 0.7);
 	text-shadow: 1px 1px 2px #000;
 	background:rgba(0,0,0, 0.2);
-	border:none;
-		-moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
-		-webkit-box-shadow:
+	border: none;
+	   -moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+	-webkit-box-shadow:
 			rgba(0, 0, 0, 0.8) 0 1px 0,
 			rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
-	-o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
+	     -o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
 
 	&:hover {
 		background:rgba(255,255,255, 0.05);
@@ -199,54 +236,10 @@ a.btn, a.btn.disabled {
 	}
 }
 
-/* Tags */
-.tag_box {
-	list-style:none;
-	margin:0;
-	padding:5px 0 ;
-	overflow:hidden;
-	&.inline {
-		display:inline; ;
-	}
-	li {
-		display:inline;
-		line-height:28px;
-	}
-	a {
-		&.active {
-			background:#57A957;
-			border:1px solid #4C964D;
-			color:#FFF;
-		}
-		span{
-			vertical-align:super;
-			font-size:0.8em;
-			display:none;
-		}
-	}
-}
-
-.tag_box.inline a,
-.tag_box a {
-	padding: 3px 6px;
-	margin: 2px;
-	background: rgba(255, 255, 255, 0.20);
-	color:white;
-	border-radius: 3px;
-	text-decoration:none;
-		-moz-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
-		-webkit-box-shadow:
-			rgba(0, 0, 0, 0.8) 0 1px 0,
-			rgba(255, 255, 255, 0.5) 0 1px 1px 0px inset;
-	-o-box-shadow: rgba(255, 255, 255, 0.1) 0 1px 0, rgba(0, 0, 0, 0.8) 0 1px 7px 0px inset;
-	&:hover {
-		background: rgba(255, 255, 255, 0.30);
-	}
-}
 
 /* Page-specific */
-div.content {
-	div#page-index {
+.content {
+	.page-index {
 		padding-top:30px !important;
 	}
 }
@@ -259,25 +252,30 @@ div.content {
 
 .zocial.googleplus:focus,
 .zocial.googleplus:hover {
-	color:#e01d30 !important;
+	color: #e01d30 !important;
 }
 
 .zocial.twitter:focus,
 .zocial.twitter:hover {
-	color:#46c0fb !important;
+	color: #46c0fb !important;
 }
 
 
 .zocial.linkedin:focus,
 .zocial.linkedin:hover {
-	color:#50a1cb !important;
+	color: #50a1cb !important;
 }
 
 .zocial.rss:focus,
 .zocial.rss:hover {
-	color:#fb9d3a !important;
+	color: #fb9d3a !important;
 }
 
+.fb-comments, .fb_iframe_widget, .fb_iframe_widget_loader  {
+	display: block !important;
+	min-height: 160px;
+}
 .fb-comments > span,
 .fb-comments iframe
 {width: 100% !important;}
+

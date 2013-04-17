@@ -7,7 +7,9 @@ tagline: Supporting tagline
 {{ theme.name }}
 {% assign site.theme.showNav = false %}
 {% for post in site.posts %}
-  {% include themes/hooligan/innerPost %}
+<div class="post h-entry">
+  {% include themes/affinitivedev/innerPost %}
+</div>
 {% endfor %}
 
 
