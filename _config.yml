@@ -4,8 +4,13 @@
 permalink: /:title
 
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
-watch: true
+safe: true
+lsi: false
+markdown: redcarpet
 pygments: true
+redcarpet:
+  extensions: ["no_intra_emphasis", "autolink", "tables", "with_toc_data"]
+
 
 # Themes are encouraged to use these universal variables
 # so be sure to set them if your theme uses them.
@@ -31,6 +36,11 @@ authors :
     email : sloan at beaffinitive
     github : smergler
     twitter : smergler
+  smergler :
+    name : James Dean
+    email : james at beaffinitive
+    github : DefiantBidet
+    twitter : DefiantBidet
   btroia :
     name : Bob Troia
     email : bob at beaffinitive

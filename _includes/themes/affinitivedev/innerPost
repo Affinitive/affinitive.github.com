@@ -20,7 +20,11 @@
 	</h4>
 </div>
 <div class="e-content">
-	{{ post.content }}
+    {% if post.content %}
+        {{ post.content }}
+    {% else %}
+        {{ content }}
+    {% endif %}
 </div>
 <div class="fb-comments" data-href="{{ site.production_url }}{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark">
 </div>
