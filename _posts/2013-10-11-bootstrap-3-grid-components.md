@@ -40,8 +40,7 @@ Bootstrap 3 changes make-column() to variants for different screen sizes which d
 
 `@include make-md-column()` is basically equivalent to `make-column()` in lower versions of Bootstrap. But you can now also include `make-sm-column()` if you want the column to still exist on tablet and `make-xs-column()` for mobile screen sizes.  There's also `make-lg-column()` for large desktops.
 
-The media queries for each of the column mixins use min-width so you only need to specify the lowest setting if they are all the same on larger screen sizes. For example,
-
+The media queries for each of the column mixins use min-width so you only need to specify the lowest setting if they are all the same on larger screen sizes. For example, if you want there to be three columns on tablets and everything larger but no columns on small screen mobile devices, use `make-sm-column(4)`. There are 12 columns to the default boostrap grid, so 12 total columns / 3 desired columns = 4. If you have a row that is just one row on larger viewports, but goes to multiple rows on smaller screens, you can add a clearing div that is only used on the small screen. This and more is explained in the [boostrap documentation](http://getbootstrap.com/css/#grid-example-mixed-complete).
 If you want to nest columns inside other columns, you'll need to put a row element inside first and then your columns inside that. You can't just add more columns directly inside another column.
 
 Just because you have multiple elements in the same row in your design doesn't mean you always need to use a row and columns. The columns make sure things align together to a grid, but your design might simply call for inline-block or floated elements with fixed widths or custom percentages. There should be a discussion with the designer to identify what was designed to the grid and what wasn't.
