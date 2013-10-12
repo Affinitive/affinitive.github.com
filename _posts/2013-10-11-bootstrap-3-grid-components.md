@@ -3,7 +3,7 @@ title: Bootstrap 3 Grid Components
 layout: post
 published: true
 author: rmarscher
-tags: bootstrap css
+tags: ["Bootstrap", "CSS"]
 ---
 
 One of the major changes in Bootstrap 3 is an update to the grid. It makes the grid always responsive and is simpler and more straight-forward than earlier versions of Bootstrap. The grid consists of three main components: containers, rows, and columns.

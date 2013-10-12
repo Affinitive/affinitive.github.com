@@ -2,21 +2,21 @@
 <div class="post h-entry">
     <div class="page-header">
         <h1 class="p-name">
-            <a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
-            {% if post.tagline %}
-                <small>{{ post.tagline }}</small>
+            <a href="{{ BASE_PATH }}{{ page.url }}">{{ page.title }}</a>
+            {% if page.tagline %}
+                <small>{{ page.tagline }}</small>
             {% endif %}
         </h1>
         <h4>
-            <span class="dt-published" >{{ post.date | date_to_long_string }}</span>{% if post.author %}
-                {% assign author = site.authors[post.author] %}
-                by <span class="p-author">{{author.name }}</span>{% endif %}{% if post.category %}
-                in <span class="p-category">{{ post.category }}</span>
+            <span class="dt-published" >{{ page.date | date_to_long_string }}</span>{% if page.author %}
+                {% assign author = site.authors[page.author] %}
+                by <span class="p-author">{{author.name }}</span>{% endif %}{% if page.category %}
+                in <span class="p-category">{{ page.category }}</span>
             {% endif %}.
-            {% if post.tags == empty %}
+            {% if page.tags == empty %}
             {% else %}
                 Filed under
-                {% assign tags_list = post.tags %}
+                {% assign tags_list = page.tags %}
                 {% include themes/affinitivedev/tags %}
             {% endif %}
         </h4>
@@ -24,7 +24,7 @@
     <div class="e-content">
         {{ content }}
     </div>
-    <div class="fb-comments" data-href="{{ site.production_url }}{{ BASE_PATH }}{{ post.url }}" data-num-posts="10" data-colorscheme="dark">
+    <div class="fb-comments" data-href="{{ site.production_url }}{{ BASE_PATH }}{{ page.url }}" data-num-posts="10" data-colorscheme="dark">
     </div>
   <hr>
   <div class="pagination btn-group">
